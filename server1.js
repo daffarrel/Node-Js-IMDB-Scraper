@@ -5,24 +5,35 @@ var cheerio = require('cheerio');
 var app     = express();
 
 app.get('/scrape', function(req, res){
-  url = 'https://www.linkedin.com/in/subhadeep-bhattacharyya-13168428/edit/topcard/';
+  url = 'http://www.imdb.com/title/tt1229340/';
 
   request(url, function(error, response, html){
     if(!error){
       var $ = cheerio.load(html);
       console.log(html);
 
-      var sectionHead, sectionMiddle, sectionEnd;
-      var json = { sectionHead : "", sectionMiddle : "", sectionEnd : ""};
+      var title, release, rating;
+      var json = { title : "", release : "", rating : ""};
 
-      $('.modal-content-wrapper').filter(function(){
+      $('.header').filter(function(){
         var data = $(this);
-        sectionHead = data.children().first().text().trim();
-  		sectionMiddle = data.children().eq(2).text().trim();
-  		sectionEnd = data.children().eq(3).text().trim();
-        json.sectionHead = sectionHead;
-        json.sectionMiddle = sectionMiddle;
-        json.sectionEnd = sectionEnd;
+        
+	title = data.children().first().text();
+	
+	release = data.children().last().children().text();
+
+	})
+	$('.ratingValue').filter(function(){
+                var data = $(this);
+
+                // The .star-box-giga-star class was exactly where we wanted it to be.
+                // To get the rating, we can simply just get the .text(), no need to traverse the DOM any further
+
+                rating = data.text();
+
+        json.rating = rating;
+	json.title = title;
+        json.release = release;
       })
 
     }
