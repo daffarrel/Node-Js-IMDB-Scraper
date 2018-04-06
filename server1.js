@@ -12,15 +12,15 @@ app.get('/scrape', function(req, res){
       var $ = cheerio.load(html);
       console.log(html);
 
-      var title, release, rating;
-      var json = { title : "", release : "", rating : ""};
+      var title, release_details, rating;
+      var json = { title : "", release_details : "", rating : ""};
 
-      $('.header').filter(function(){
+      $('.title_wrapper').filter(function(){
         var data = $(this);
         
 	title = data.children().first().text();
 	
-	release = data.children().last().children().text();
+	release_details = data.children().last().children().text();
 
 	})
 	$('.ratingValue').filter(function(){
@@ -33,7 +33,7 @@ app.get('/scrape', function(req, res){
 
         json.rating = rating;
 	json.title = title;
-        json.release = release;
+        json.release_details = release_details;
       })
 
     }
