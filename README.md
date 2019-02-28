@@ -1,4 +1,4 @@
-# Node.js-IMDB-Scraper-
+# Node.js-IMDB-Scraper, can be extended for other websites.
 
 ## Scrape IMDB using Node.js
 
