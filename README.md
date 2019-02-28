@@ -1,12 +1,14 @@
 # Node.js-IMDB-Scraper-
-Scrape IMDB using Node.js
-This application can be used to scrape any website by changing the website URL and DOM elements accordingly.
 
-Steps to run the application:
+## Scrape IMDB using Node.js
 
-replace the movie url with the URL that you want to scrape and change your DOM parsing technique.
+#### This application can be used to scrape any website by changing the website URL and DOM elements accordingly.
 
-npm install
+## Steps to run the application:
+
+### replace the movie url with the URL that you want to scrape and change your DOM parsing technique.
+
+##npm install
 
 node server1.js
 
