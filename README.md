@@ -8,11 +8,11 @@
 
 ### replace the movie url with the URL that you want to scrape and change your DOM parsing technique.
 
-##npm install
+## npm install
 
-node server1.js
+## node server1.js
 
-http://localhost:8081/scrape [in your local browser to see the final json file generated ]
+## http://localhost:8081/scrape [in your local browser to see the final json file generated ]
 
 # Tech Stack:
 
