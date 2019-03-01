@@ -21,3 +21,5 @@
 3. It uses Request to make HTTP calls to the URL which will be scraped.
 
 ## Keep these dependencies in your package.json file.
+
+## Please raise issues if found.
